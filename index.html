@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    
+  </head>
+  <body>
+    <main>
+      <div class="logo-container">
+        <img src="./images/logo.svg" alt="logo" />
+      </div>
+
+      <div class="hero-container">
+        <!-- <picture>
+          <source
+            media="(max-width: 480px)"
+            srcset="./images/hero-mobile.jpg"
+          />
+          <img src="./images/hero-desktop.jpg" alt="" />
+        </picture> -->
+      </div>
+
+      <div class="article">
+        <h1><span>we're</span> coming soon</h1>
+        <p>
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date witch announcements and our
+          launch deals.
+        </p>
+
+        <div class="form">
+          <input type="email" class="input error-border" id="userInput" placeholder="Email Addres" />
+          <img src="./images/icon-error.svg" alt="error-icon" id="errorIcon" class="error-icon hide">
+          <button type="submit" id="submitButton">
+            <img src="./images/icon-arrow.svg" alt="arrow icon" />
+          </button>
+          <p class="error-message hide" id="errorMessage">Please provide a valid email</p>
+        </div>
+      </div>
+
+      
+    </main>
+
+    <footer>
+      <p class="attribution hide">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/hsrvms" target="_blank">Husrev</a>.
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+  /* COLORS */
+  /* Primary */
+  --desaturatedRed-color: hsl(0, 36%, 70%);
+  --softRed-color: hsl(0, 93%, 68%);
+
+  /* Neutral */
+  --darkGrayishRed-color: hsl(0, 6%, 24%);
+
+  /* Gradients */
+  --linear1-color: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%) 0%,
+    hsl(0, 100%, 98%) 100%
+  );
+  --linear2-color: linear-gradient(
+    135deg,
+    hsl(0, 80%, 86%) 0%,
+    hsl(0, 74%, 74%) 100%
+  );
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background-color: rgba(255, 245, 245, .5);
+  min-width: 375px;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* MAIN */
+main {
+  background: var(--linear1-color);
+  min-width: 375px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.logo-container {
+  align-self: flex-start;
+  margin: 2.1rem;
+}
+
+.logo-container img {
+  width: 7rem;
+}
+
+.hero-container {
+  width: 100%;
+  margin-bottom: 3.7rem;
+
+  background-image: url(./images/hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 250px;
+}
+
+.article {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.article h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.article span {
+  color: var(--desaturatedRed-color);
+  font-weight: 300;
+}
+
+.article p {
+  margin: auto 2.1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--desaturatedRed-color);
+  opacity: 1;
+}
+
+/* FORM */
+.form {
+  width: 100%;
+  margin-top: 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 6rem;
+
+  position: relative;
+}
+
+.form .input {
+  width: 80%;
+  background: transparent;
+  padding: 0.9rem 1.5rem;
+  border: 1px solid var(--desaturatedRed-color);
+  opacity: 0.6;
+  border-radius: 2rem;
+}
+
+.form input::placeholder {
+  color: var(--desaturatedRed-color);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.form button {
+  border: none;
+  background: var(--linear2-color);
+  padding: 0.9rem 1.8rem;
+  border-radius: 2rem;
+  margin-left: -4.3rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.form button:hover {
+  background: hsl(0, 80%, 86%);
+}
+
+.form .error-message {
+  width: 80%;
+  text-indent: 1.5rem;
+  margin-top: 0.5rem;
+  color: var(--softRed-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  text-align: left;
+}
+
+.hide {
+  display: none;
+}
+
+.error-border {
+  border: 2px solid var(--softRed-color);
+}
+
+.error-icon {
+  position: absolute;
+  top: 13px;;
+  left: 58%;
+  
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-color: var(--linear1-color);
+    max-width: 1440px;
+    max-height: 800px;
+    padding-left: 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .logo-container {
+    margin: 0;
+    margin-top: 4rem;
+
+    grid-row: 1 / 4;
+    grid-column: 2 / 5;
+    justify-self: start;
+  }
+
+  .logo-container img {
+    width: 10rem;
+  }
+
+  .hero-container {
+    grid-row: 1 / 13;
+    grid-column: 8 / 13;
+
+    height: 100%;
+    margin: 0;
+
+    background-image: url(./images/hero-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .article {
+    margin: 0;
+    margin-top: 2rem;
+
+    grid-row: 4 / 10;
+    grid-column: 2 / 6;
+    align-self: start;
+
+    text-align: left;
+  }
+
+  .article h1 {
+    font-size: 4rem;
+  }
+
+  .article p {
+    margin: 0;
+    margin-bottom: 3rem;
+
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    line-height: 1.7;
+  }
+
+  .form {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .form input {
+    width: 92%;
+  }
+
+  .form button {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+  }
+}
+
+/* FOOTER */
+.attribution {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
